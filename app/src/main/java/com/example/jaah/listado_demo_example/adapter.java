@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by JAAH on 14/11/16.
@@ -58,6 +59,11 @@ public class adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public void add(String text, int position) {
         lsData.add(position, text);
         notifyItemInserted(position);
+    }
+
+    public void addAll(List<String> data) {
+        int oldSize = lsData.size();
+        notifyItemRangeInserted(oldSize,data.size());
     }
 
     public void removeAll(int positionStar, int itemCount) {

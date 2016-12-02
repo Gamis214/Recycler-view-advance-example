@@ -16,7 +16,7 @@ import jp.wasabeef.recyclerview.animators.SlideInLeftAnimator;
 public class MainActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    Button btn,btn_delete,btn_delete_all;
+    Button btn,btn_delete,btn_delete_all,btn_addAll;
     ArrayList<String> lstNumbers = new ArrayList();
     adapter adater;
 
@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView = (RecyclerView) findViewById(R.id.my_list);
         btn = (Button) findViewById(R.id.btn);
+        btn_addAll = (Button) findViewById(R.id.btn_addAll);
         btn_delete = (Button) findViewById(R.id.btn_delete);
         btn_delete_all = (Button) findViewById(R.id.btn_delete_all);
 
@@ -34,6 +35,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 adater.add("NEW ITEM",lstNumbers.size());
+            }
+        });
+
+        btn_addAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                lstNumbers.add("H");
+                lstNumbers.add("I");
+                lstNumbers.add("J");
+                lstNumbers.add("K");
+                lstNumbers.add("L");
+                adater.addAll(lstNumbers);
             }
         });
 
