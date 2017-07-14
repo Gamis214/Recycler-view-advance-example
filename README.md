@@ -14,3 +14,14 @@ public void remove(int position) {
 ```java
 notifyDataSetChanged();
 ```
+
+### Para presentar un preview en diferente orientacion se muestra de la sig. manera
+```java
+<android.support.v7.widget.RecyclerView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+    tools:listitem="@layout/item_detail_sp"
+/>
+```
